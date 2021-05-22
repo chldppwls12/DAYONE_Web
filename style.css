@@ -1,0 +1,50 @@
+a
+{
+    text-decoration: none;
+    color:black;
+}
+
+#logo
+{
+    background-color:#ff5353;
+    height: 50vh;
+}
+
+#header
+{
+    position: sticky;
+    top: 0;
+    height: 10vh;
+    background-color: yellow;
+}
+
+.row
+{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.container
+{
+    width: 100%;
+}
+
+.shortcut
+{
+    height: 40vh;
+}
+
+#shortcut_1
+{
+    background-color: red;
+}
+
+#shortcut_2
+{
+    background-color: green;
+}
+
+#shortcut_3
+{
+    background-color: blue;
+}
