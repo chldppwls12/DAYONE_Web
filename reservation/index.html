@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>달력</title>
+    <style src="src/styles.css">
+    </style>
+
+</head>
+<body>
+    <p></p>
+    <h3 align="center">Day1</h3>
+<table id="calendar" border="3" align="center" style="border-color:red ">
+    <tr><!-- label은 마우스로 클릭을 편하게 해줌 -->
+        <td><button class="prev"><</button></td>
+        <td align="center" id="tbCalendarYM" colspan="5">
+        yyyy년 m월</td>
+        <td><button class="next">>
+            
+        </button></td>
+    </tr>
+    <tr>
+        <td align="center"><font color ="#F79DC2">Sun</td>
+        <td align="center">Mon</td>
+        <td align="center">Tue</td>
+        <td align="center">Wed</td>
+        <td align="center">thu</td>
+        <td align="center">Fri</td>
+        <td align="center"><font color ="skyblue">Sat</td>
+    </tr> 
+</table>
+<script src="src/calendar.js">
+    buildCalendar();
+</script>
+</body>
+</html>
