@@ -18,12 +18,6 @@ a
     background-color: yellow;
 }
 
-.row
-{
-    display: flex;
-    flex-wrap: wrap;
-}
-
 .container
 {
     width: 100%;
