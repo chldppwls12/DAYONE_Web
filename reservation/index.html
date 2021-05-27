@@ -1,34 +1,48 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>달력</title>
-    <style src="src/styles.css">
-    </style>
-
+    <title>동아리방 예약</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../grid.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-    <p></p>
-    <h3 align="center">Day1</h3>
-<table id="calendar" border="3" align="center" style="border-color:red ">
-    <tr><!-- label은 마우스로 클릭을 편하게 해줌 -->
-        <td><button class="prev"><</button></td>
-        <td align="center" id="tbCalendarYM" colspan="5">
-        yyyy년 m월</td>
-        <td><button class="next">>
-            
-        </button></td>
-    </tr>
-    <tr>
-        <td align="center"><font color ="#F79DC2">Sun</td>
-        <td align="center">Mon</td>
-        <td align="center">Tue</td>
-        <td align="center">Wed</td>
-        <td align="center">thu</td>
-        <td align="center">Fri</td>
-        <td align="center"><font color ="skyblue">Sat</td>
-    </tr> 
-</table>
-<script src="src/calendar.js">
+    <div>
+        <div id = "header" class = "container">
+            <div class="row">
+                header
+            </div>
+        </div>
+        <div id = "cal" class="row">
+            <div class="col-12 col-md-4">
+                <h3 align="center">Day1</h3>
+                <table class="col-12 col-md-4" id="calendar" border="3" align="center" style="border-color:red ">
+                    <tr><!-- label은 마우스로 클릭을 편하게 해줌 -->
+                        <td><button class="prev"><</button></td>
+                        <td align="center" id="tbCalendarYM" colspan="5">
+                        yyyy년 m월</td>
+                        <td><button class="next">></button></td>
+                    </tr>
+                    <tr>
+                        <td align="center"><font color ="#F79DC2">Sun</td>
+                        <td align="center">Mon</td>
+                        <td align="center">Tue</td>
+                        <td align="center">Wed</td>
+                        <td align="center">thu</td>
+                        <td align="center">Fri</td>
+                        <td align="center"><font color ="skyblue">Sat</td>
+                    </tr> 
+                </table>
+            </div>
+        </div>
+        <div id = "informations" class="row">
+            <div class="col-12 col-md-4">
+                fff
+            </div>
+        </div>
+    </div>
+<script src="index.js">
     buildCalendar();
 </script>
 </body>

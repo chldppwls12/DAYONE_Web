@@ -1,0 +1,19 @@
+body {
+  font-family: sans-serif;
+}
+
+#header {
+  top: 0;
+  background-color: red;
+  height: 5vh;
+}
+
+#cal {
+  background-color: antiquewhite;
+  height: 50vh;
+}
+
+#informations {
+  background-color: blueviolet;
+  height: 45vh;
+}
