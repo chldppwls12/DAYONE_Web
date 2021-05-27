@@ -9,36 +9,34 @@
 </head>
 <body>
     <div>
-        <div id = "header" class = "container">
+        <div id = "header">
             <div class="row">
                 header
             </div>
         </div>
         <div id = "cal" class="row">
-            <div class="col-12 col-md-4">
-                <h3 align="center">Day1</h3>
-                <table class="col-12 col-md-4" id="calendar" border="3" align="center" style="border-color:red ">
-                    <tr><!-- label은 마우스로 클릭을 편하게 해줌 -->
-                        <td><button class="prev"><</button></td>
-                        <td align="center" id="tbCalendarYM" colspan="5">
-                        yyyy년 m월</td>
-                        <td><button class="next">></button></td>
-                    </tr>
-                    <tr>
-                        <td align="center"><font color ="#F79DC2">Sun</td>
-                        <td align="center">Mon</td>
-                        <td align="center">Tue</td>
-                        <td align="center">Wed</td>
-                        <td align="center">thu</td>
-                        <td align="center">Fri</td>
-                        <td align="center"><font color ="skyblue">Sat</td>
-                    </tr> 
-                </table>
-            </div>
+            <h3 class = "col-12" align="center">Day1</h3>
+            <table class = "col-6" id="calendar" align="center">
+                <tr align = "center">
+                    <td><label class="prev"><</label></td>
+                    <td align="center" id="tbCalendarYM" colspan="5">
+                    yyyy년 m월</td>
+                    <td><label class="next">></label></td>
+                </tr>
+                <tr align="center">
+                    <td align="center" id = "Sun">Sun</td>
+                    <td align="center">Mon</td>
+                    <td align="center">Tue</td>
+                    <td align="center">Wed</td>
+                    <td align="center">thu</td>
+                    <td align="center">Fri</td>
+                    <td align="center" id = "Sat">Sat</td>
+                </tr> 
+            </table>
         </div>
         <div id = "informations" class="row">
-            <div class="col-12 col-md-4">
-                fff
+            <div class="row">
+                information
             </div>
         </div>
     </div>
