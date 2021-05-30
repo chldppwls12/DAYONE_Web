@@ -178,7 +178,7 @@ ul
 {
     position: fixed;
     top: 0;
-    right: 0;
+    right: -231px;
     width: 231px;
     height: 100vh;
     z-index: 10;
