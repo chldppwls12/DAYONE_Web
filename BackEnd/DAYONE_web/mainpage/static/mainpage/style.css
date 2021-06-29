@@ -1,0 +1,208 @@
+/* pre-setting */
+
+@font-face {
+    font-family: PoetsenOne;
+    src: url(assets/PoetsenOne-Regular.ttf) format("truetype");
+}
+
+*
+{
+    margin: 0;
+    padding: 0;
+}
+
+a
+{
+    text-decoration: none;
+    color:black;
+}
+
+ul
+{
+    list-style-type: none;
+}
+
+.container
+{
+    width: 100%;
+}
+
+/* header */
+
+#header
+{
+    position: sticky;
+    top: 0;
+    height: 5vh;
+    background-color: white;
+    z-index: 5;
+}
+
+#header_content
+{
+    height: 5vh;
+}
+
+#logo_image
+{
+    position: absolute;
+    left: 0;
+    height: 5vh;
+    object-fit: cover;
+}
+
+#login
+{
+    position: absolute;
+    right: 46px;
+    
+    color: #FF5353;
+    font-size: 13px;
+    line-height: 16px;
+    padding: 0px 8px;
+    border: 2px solid #FF5353;
+    box-sizing: border-box;
+    border-radius: 6px;
+}
+
+#nav_icon
+{
+    position: absolute;
+    right: 14px;
+}
+
+#nav_icon div
+{
+    width: 20px;
+    height: 0px;
+    background: #C4C4C4;
+    border: 2px solid #FF5353;
+    border-radius: 4px;
+    margin-bottom: 3px;
+}
+
+#nav_icon:last-child
+{
+    margin-bottom: 0;
+}
+
+#nav_input
+{
+    display: none;
+}
+
+/* main */
+
+#main
+{
+    background-color:#ff5353;
+    height: 95vh;
+    margin: 0 auto;
+}
+
+
+#main_content
+{
+    height: 95vh;
+}
+
+#main_content h1
+{
+    position: absolute;
+    left: 15px;
+    top: 132px;
+
+    color: white;
+    font-family: PoetsenOne;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 55px;
+    line-height: 80px;
+    text-align: left;
+}
+
+#main_content span
+{
+    color: rgba(255, 255, 255, 0.7);
+}
+
+#main_content img
+{
+    z-index: 5;
+    position: absolute;
+}
+
+#firework_1
+{
+    width: 63px;
+    height: 63px;
+    left: calc(70vw - 63px / 2);
+    top: calc(70vh - 63px / 2);
+}
+
+#firework_2
+{
+    width: 46px;
+    height: 46px;
+    left: calc(80vw - 23px);
+    top: calc(60vh - 23px);
+    
+}
+
+/* navigation bar */
+
+#nav_top
+{
+    height: 10vh;
+    background-color: #FFE9E2;
+    ;
+}
+
+#nav_content
+{
+    height: 90vh;
+    background-color: white;
+}
+
+#nav_content li
+{
+    padding-top: 20px;
+    padding-left: 16px;
+}
+
+#nav_content a
+{
+    color: #ff5353;
+}
+
+#nav_bar
+{
+    position: fixed;
+    top: 0;
+    right: -231px;
+    width: 231px;
+    height: 100vh;
+    z-index: 10;
+    transition: 0.5s;
+}
+
+/* section */ 
+
+#shortcut_1
+{
+    background-image:url("assets/section_bg.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#shortcut_2
+{
+    background-color:  rgba(255, 124, 83, 0.17);
+}
+
+
+
+.shortcut
+{
+    height: 40vh;
+}
