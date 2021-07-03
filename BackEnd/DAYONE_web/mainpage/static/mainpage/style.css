@@ -51,9 +51,10 @@ ul
 #logo_image
 {
     position: absolute;
-    left: 0;
+    left: 9px;
     height: 5vh;
     object-fit: cover;
+    transform:scale(1.4, 1.4);
 }
 
 #login
