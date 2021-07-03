@@ -1,13 +1,16 @@
 var today = new Date();
 var date = new Date();
+
 function prevCalendar() {
   today = new Date(today.getFullYear(), today.getMonth() - 1, today.getDate());
   buildCalendar();
+  console.log("hello");
 }
 
 function nextCalendar() {
   today = new Date(today.getFullYear(), today.getMonth() + 1, today.getDate());
   buildCalendar();
+  console.log("bye");
 }
 function buildCalendar() {
   var doMonth = new Date(today.getFullYear(), today.getMonth(), 1);
@@ -15,7 +18,7 @@ function buildCalendar() {
   var tbCalendar = document.getElementById("calendar");
   var tbCalendarYM = document.getElementById("tbCalendarYM");
   tbCalendarYM.innerHTML =
-    today.getFullYear() + "년 " + (today.getMonth() + 1) + "월";
+    "<font color=white>"+today.getFullYear() + "년 " + (today.getMonth() + 1) + "월";
 
   while (tbCalendar.rows.length > 2) {
     tbCalendar.deleteRow(tbCalendar.rows.length - 1);
@@ -33,10 +36,10 @@ function buildCalendar() {
     cell.innerHTML = i;
     cnt = cnt + 1;
     if (cnt % 7 == 1) {
-      cell.innerHTML = "<font color=#F79DC2>" + i;
+      cell.innerHTML = "<font color=#ff5353>" + i;
     }
     if (cnt % 7 == 0) {
-      cell.innerHTML = "<font color=skyblue>" + i;
+      cell.innerHTML = "<font color=skyblue>"+i;
       row = calendar.insertRow();
     }
 
@@ -49,7 +52,8 @@ function buildCalendar() {
     }
   }
 }
-const prev = document.querySelector(".prev");
-const next = document.querySelector(".next");
-prev.addEventListener("click", prevCalendar());
-next.addEventListener("click", nextCalendar());
+buildCalendar();
+const prev = document.querySelector("#prev");
+const next = document.querySelector("#next");
+prev.addEventListener("click", event =>{prevCalendar();});
+next.addEventListener("click", event =>{nextCalendar();});

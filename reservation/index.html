@@ -11,31 +11,33 @@
     <div>
         <div id = "header">
             <div id="backButton">
-                back
+                <img src="images/Union.png" id="back"></img>
             </div>
             <div id="menuButton" >
-                menu
+                <img src="images/Group1.png" id="menu"></img>
             </div>
         </div>
         <div id = "cal" class="row">
-            <h3 class = "col-12" align="center">DAYONE</h3>
             <table class = "col-10 col-sm-6 col-lg-5" id="calendar" align="center">
-                <tr align = "center">
-                    <td><label class="prev"><</label></td>
-                    <td align="center" id="tbCalendarYM" colspan="5">
-                    yyyy년 m월</td>
-                    <td><label class="next">></label></td>
+                <tr align="center" id="cal-top">
+                    <td class="not" colspan="7">
+                    <button id="prev" class="button"><</button><span align="center" id="tbCalendarYM" class="font">
+                    yyyy년 m월</span><button id="next" class="button">></button>
+                    </td>
                 </tr>
                 <tr align="center">
-                    <td align="center" id = "Sun">Sun</td>
-                    <td align="center">Mon</td>
-                    <td align="center">Tue</td>
-                    <td align="center">Wed</td>
-                    <td align="center">thu</td>
-                    <td align="center">Fri</td>
-                    <td align="center" id = "Sat">Sat</td>
+                    <td id = "Sun">Sun</td>
+                    <td >Mon</td>
+                    <td >Tue</td>
+                    <td >Wed</td>
+                    <td >thu</td>
+                    <td >Fri</td>
+                    <td id = "Sat">Sat</td>
                 </tr> 
             </table>
+        </div>
+        <div id="middle">
+            <span>등록된 일정이 없습니다.</span>
         </div>
         <div id = "informations" class="row">
             <button id="bookingButton" class="col-6 col-sm-5 col-lg-4">
@@ -44,7 +46,7 @@
         </div>
     </div>
 <script src="index.js">
-    buildCalendar();
+   
 </script>
 </body>
 </html>
