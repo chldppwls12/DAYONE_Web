@@ -27,6 +27,11 @@ ul
     width: 100%;
 }
 
+.position_box
+{
+    position: absolute;
+}
+
 /* header */
 
 #header
@@ -195,30 +200,29 @@ ul
     background-size: cover;
 }
 
-#shortcut_1 h3
+#shortcut_1 .position_box h3
 {
     position: absolute;
+    left: calc(50vw - 192px/2);
+    top: calc(40vh * 0.26);
     width: 192px;
     height: 52px;
-    left: calc(50% - 192px/2 - 0.5px);
-    top: calc(100vh + 40vh * 0.31);
     font-family: PoetsenOne;
     font-style: normal;
     font-weight: normal;
     font-size: 43px;
     line-height: 52px;
-    text-align: center;
 
     color: #FF5353;
 }
 
-#shortcut_1 a
-{
-    position: absolute;
-    left: calc(5%);
-    top: calc(100vh + 40vh * 0.51);
-    width: 90%;
+#shortcut_1 .position_box a
+{   position: absolute;
+    left: 5vw;
+    top: calc(40vh * 0.51);
+    width: 90vw;
     height: 52px;
+
     border: 2px solid #ff5353;
     border-radius: 6px;
     text-align: center;
@@ -232,12 +236,13 @@ ul
     background-color:  rgba(255, 124, 83, 0.17);
 }
 
-#shortcut_2 a
-{   position: absolute;
-    width: 90%;
+#shortcut_2 .position_box a
+{   
+    position: absolute;
+    left: 5vw;
+    top: calc(40vh * 0.4);
+    width: 90vw;
     height: 52px;
-    left: calc(5%);
-    top: calc(140vh + 40vh * 0.35);
 
     text-align: center;
     line-height: 52px;
@@ -247,13 +252,13 @@ ul
     border-radius: 6px;
 }
 
-#shortcut_2 img
+#shortcut_2 .position_box img
 {
     position: absolute;
+    left: calc(100vw - 173px);
+    top: calc(40vh - 101px);
     width: 173px;
     height: 91px;
-    right: 3px;
-    bottom: calc(-80vh + 5px);
 }
 
 .shortcut
