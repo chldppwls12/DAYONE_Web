@@ -163,6 +163,12 @@ ul
     ;
 }
 
+#nav_top img
+{
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
 #nav_content
 {
     height: 90vh;
@@ -221,9 +227,9 @@ ul
     left: 5vw;
     top: calc(40vh * 0.51);
     width: 90vw;
-    height: 52px;
+    height: calc(40vh * 0.2);
 
-    border: 2px solid #ff5353;
+    border: 2px solid #ffffff;
     border-radius: 6px;
     text-align: center;
     line-height: 52px;
@@ -242,7 +248,7 @@ ul
     left: 5vw;
     top: calc(40vh * 0.4);
     width: 90vw;
-    height: 52px;
+    height: calc(40vh * 0.2);
 
     text-align: center;
     line-height: 52px;

@@ -1,6 +1,6 @@
 const nav = document.querySelector('#nav_bar');
 const nav_icon = document.querySelector('#nav_icon');
-const nav_back = document.querySelector('#nav_top span');
+const nav_back = document.querySelector('#nav_top img');
 
 nav_icon.addEventListener('click', () => 
 {
