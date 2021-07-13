@@ -52,7 +52,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'mainpage.apps.MainpageConfig',
-    'calendarpage',
+    'calendarpage.apps.CalendarpageConfig',
 ]
 
 MIDDLEWARE = [
