@@ -49,9 +49,8 @@ function buildCalendar() {
       today.getMonth() == date.getMonth() &&
       i == date.getDate()
     ) {
-      
-      cell.bgColor = "#FAF58C";
-    }//오늘 날짜 표시하기=>안됨..왜?
+      cell.style.backgroundColor = "#FAF58C";
+    }
   }
   
   console.log(tbCalendar.rows.length-2,(tbCalendar.rows.length-2)*7);
