@@ -4,17 +4,15 @@ var date = new Date();
 function prevCalendar() {
   today = new Date(today.getFullYear(), today.getMonth() - 1, today.getDate());
   buildCalendar();
-  console.log("hello");
 }
 
 function nextCalendar() {
   today = new Date(today.getFullYear(), today.getMonth() + 1, today.getDate());
   buildCalendar();
-  console.log("bye");
 }
 function buildCalendar() {
-  var doMonth = new Date(today.getFullYear(), today.getMonth(), 1);
-  var lastDate = new Date(today.getFullYear(), today.getMonth() + 1, 0);
+  var firstDate = new Date(today.getFullYear(), today.getMonth(), 1);//이번달 1일
+  var lastDate = new Date(today.getFullYear(), today.getMonth() + 1, 0);//이번달 마지막날
   var tbCalendar = document.getElementById("calendar");
   var tbCalendarYM = document.getElementById("tbCalendarYM");
   tbCalendarYM.innerHTML =
@@ -26,34 +24,53 @@ function buildCalendar() {
   var row = null;
   row = tbCalendar.insertRow();
   var cnt = 0;
-  for (var i = 0; i < doMonth.getDay(); i++) {
+  for (var i = 0; i < firstDate.getDay(); i++) {
     var cell = row.insertCell();
     cnt = cnt + 1;
-  }
+  }//이번달 1일 전까지 공란 만들기
 
   for (i = 1; i <= lastDate.getDate(); i++) {
     cell = row.insertCell();
     cell.innerHTML = i;
+    cell.setAttribute("id",`${i}`);
     cnt = cnt + 1;
     if (cnt % 7 == 1) {
       cell.innerHTML = "<font color=#ff5353>" + i;
+      
     }
     if (cnt % 7 == 0) {
-      cell.innerHTML = "<font color=skyblue>"+i;
       row = calendar.insertRow();
+      
     }
+
 
     if (
       today.getFullYear() == date.getFullYear() &&
       today.getMonth() == date.getMonth() &&
       i == date.getDate()
     ) {
+      
       cell.bgColor = "#FAF58C";
+    }//오늘 날짜 표시하기=>안됨..왜?
+  }
+  
+  console.log(tbCalendar.rows.length-2,(tbCalendar.rows.length-2)*7);
+  console.log(cnt, lastDate.getDate());
+  if(cnt%7 !=0){
+    for(i=cnt+1; i<=(tbCalendar.rows.length-2)*7; i++){
+      cell=row.insertCell();
+      cnt=cnt+1
     }
   }
+  else{
+    tbCalendar.deleteRow(-1);
+  }//tr이 주차만큼 생성
+  console.log(cnt)
+  
 }
 buildCalendar();
 const prev = document.querySelector("#prev");
 const next = document.querySelector("#next");
 prev.addEventListener("click", event =>{prevCalendar();});
 next.addEventListener("click", event =>{nextCalendar();});
+

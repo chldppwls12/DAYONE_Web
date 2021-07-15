@@ -23,13 +23,19 @@ body {
   border: 1px solid;
   border-color: #ff5353;
   background-color: #ff5353;
-  width: 500px;
 }
 
 td:not(.not) {
   background-color: white;
   border: 1px solid;
   border-color: #ff5353;
+  text-align: center;
+  width: 100/7%;
+}
+
+td:not(.not, .day) {
+  vertical-align: top;
+  text-align: left;
 }
 
 #backButton {
@@ -57,8 +63,8 @@ td:not(.not) {
 }
 
 #calendar {
+  table-layout: fixed;
   border-collapse: collapse;
-  border-spacing: 0;
   height: 50vh;
   margin-top: 2.5vh;
 }
@@ -72,7 +78,15 @@ td:not(.not) {
   color: #ff5353;
 }
 
-#informations {
+#information {
+  background-color: #c4c4c4;
+  color: white;
+  height: 20vh;
+  text-align: center;
+  line-height: 20vh;
+}
+
+#booking {
   background-color: #ffffff;
   height: 40vh;
 }
@@ -87,10 +101,4 @@ td:not(.not) {
   font-size: 3vh;
   margin: 8vh auto;
   height: 8vh;
-}
-
-#middle {
-  background-color: #c4c4c4;
-  color: white;
-  height: 20vh;
 }
