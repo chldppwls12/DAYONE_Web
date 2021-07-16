@@ -11,8 +11,8 @@ function nextCalendar() {
   buildCalendar();
 }
 function buildCalendar() {
-  var firstDate = new Date(today.getFullYear(), today.getMonth(), 1);//이번달 1일
-  var lastDate = new Date(today.getFullYear(), today.getMonth() + 1, 0);//이번달 마지막날
+  var firstDate = new Date(today.getFullYear(), today.getMonth(), 1);
+  var lastDate = new Date(today.getFullYear(), today.getMonth() + 1, 0);
   var tbCalendar = document.getElementById("calendar");
   var tbCalendarYM = document.getElementById("tbCalendarYM");
   tbCalendarYM.innerHTML =
