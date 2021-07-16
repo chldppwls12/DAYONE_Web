@@ -53,8 +53,7 @@ function buildCalendar() {
     }
   }
   
-  console.log(tbCalendar.rows.length-2,(tbCalendar.rows.length-2)*7);
-  console.log(cnt, lastDate.getDate());
+
   if(cnt%7 !=0){
     for(i=cnt+1; i<=(tbCalendar.rows.length-2)*7; i++){
       cell=row.insertCell();
@@ -64,7 +63,7 @@ function buildCalendar() {
   else{
     tbCalendar.deleteRow(-1);
   }//tr이 주차만큼 생성
-  console.log(cnt)
+ 
   
 }
 buildCalendar();
