@@ -16,7 +16,7 @@ function buildCalendar() {
   var tbCalendar = document.getElementById("calendar");
   var tbCalendarYM = document.getElementById("tbCalendarYM");
   tbCalendarYM.innerHTML =
-    "<font color=white>"+today.getFullYear() + "년 " + (today.getMonth() + 1) + "월";
+    "<font color=white> "+today.getFullYear() + "." + (today.getMonth() + 1)+" ";
 
   while (tbCalendar.rows.length > 2) {
     tbCalendar.deleteRow(tbCalendar.rows.length - 1);
@@ -50,6 +50,9 @@ function buildCalendar() {
       i == date.getDate()
     ) {
       cell.style.backgroundColor = "#FAF58C";
+      /*const circle=document.createElement('div');
+      cell.appendChild(circle);
+      circle.setAttribute("id","circle");*/
     }
   }
   
