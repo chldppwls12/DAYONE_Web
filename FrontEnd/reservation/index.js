@@ -49,10 +49,12 @@ function buildCalendar() {
       today.getMonth() == date.getMonth() &&
       i == date.getDate()
     ) {
-      cell.style.backgroundColor = "#FAF58C";
-      /*const circle=document.createElement('div');
+      //cell.style.backgroundColor = "#FAF58C";
+      
+      const circle=document.createElement('div');
       cell.appendChild(circle);
-      circle.setAttribute("id","circle");*/
+      circle.setAttribute("id","circle");
+      cell.style.position = "relative";
     }
   }
   
