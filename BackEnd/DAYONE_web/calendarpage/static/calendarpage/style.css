@@ -1,3 +1,142 @@
-h1{
-  color: powderblue;
+@font-face {
+  font-family: "PoetsenOne";
+  src: url(../mainpage/assets/PoetsenOne-Regular.ttf) format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: "PoetsenOne";
+  margin: 0;
+  padding: 0;
+}
+
+#cal-top {
+  border: 1px solid;
+  border-color: #ff5353;
+  background-color: #ff5353;
+}
+
+td:not(.not) {
+  background-color: white;
+  border: 1px solid;
+  border-color: #fc7373;
+  text-align: center;
+  width: 100/7%;
+}
+
+td:not(.not, .day) {
+  vertical-align: top;
+  text-align: left;
+}
+
+#backButton {
+  display: inline-block;
+  background-color: #ffffff;
+  text-align: left;
+  float: left;
+  height: 5vh;
+  width: 6%;
+}
+
+#menuButton {
+  display: inline-block;
+  background-color: #ffffff;
+  height: 5vh;
+  width: 6%;
+  text-align: right;
+  float: right;
+}
+
+#cal {
+  background-color: #ffe9e2;
+  width: 100%;
+  height: 55vh;
+}
+
+#calendar {
+  table-layout: fixed;
+  border-collapse: collapse;
+  height: 50vh;
+  margin-top: 2.5vh;
+}
+
+.button {
+  display: inline-block;
+  background-color: #ffffff;
+}
+
+#prev {
+  border: 2px solid #ffffff;
+  border-right: 4px solid #ffffff;
+  border-radius: 2px;
+  vertical-align: middle;
+}
+
+#prevButton {
+  width: 0;
+  height: 0;
+  border-top: 6px solid transparent;
+  border-right: 6px solid #ff5353;
+  border-bottom: 6px solid transparent;
+}
+
+#next {
+  border: 2px solid #ffffff;
+  border-left: 4px solid #ffffff;
+  border-radius: 2px;
+  vertical-align: middle;
+}
+
+#nextButton {
+  width: 0;
+  height: 0;
+  border-top: 6px solid transparent;
+  border-left: 6px solid #ff5353;
+  border-bottom: 6px solid transparent;
+}
+
+#tbCalendarYM {
+  vertical-align: middle;
+}
+
+#Sun {
+  color: #ff5353;
+}
+
+#information {
+  background-color: #c4c4c4;
+  color: white;
+  height: 20vh;
+  text-align: center;
+  line-height: 20vh;
+}
+
+#booking {
+  background-color: #ffffff;
+  height: 40vh;
+}
+
+#bookingButton {
+  display: inline-block;
+  background-color: #ff5353;
+  border-color: #ff5353;
+  border-radius: 10px;
+  text-align: center;
+  color: white;
+  font-size: 3vh;
+  margin: 8vh auto;
+  height: 8vh;
+}
+
+#circle {
+  position: absolute;
+  top: 0;
+  right: 0px;
+  display: inline-block;
+  background-color: #faf58c;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  opacity: 50%;
 }

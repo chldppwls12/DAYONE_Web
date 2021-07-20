@@ -1,78 +1,43 @@
-{% load static %}
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable = no">
-        <title>DAY ONE</title>
-        <link rel="stylesheet" href="{% static 'mainpage/style.css' %}">
-        <link rel="stylesheet" href="{% static 'grid.css' %}">
-    </head>
+{% extends 'main.html' %}
 
-    <body>
-        <div id = "frame">
-            <div id = "header" class = "container">
-                <div id = "header_content" class = "row">
-                    <img id = "logo_image" src="{% static 'mainpage/assets/logo.png' %}">
-                    <a id = "login">로그인</a>
-                    <div id = "nav_icon">
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                    </div>
-                </div>
-            </div>
-            
-            <div id = "nav_bar">
-                <div id = "nav_top">
-                    <img src = "{% static 'mainpage/assets/back.png' %}">
-                </div>
-                <div id = "nav_content">
-                    <ul>
-                        <li><a id = "to_login" href = "#">로그인</a></li>
-                        <li><a id = "to_home" href = "#">홈</a></li>
-                        <li><a id = "to_my" href = "#">마이페이지</a></li>
-                    </ul>
-                </div>
-            </div>
-
-            <div id = "main" class = "container">
-                <div id = "main_content">
-                    <h1>
-                        D<span>O</span><br>
-                        A<span>NYTHING</span><br>
-                        Y<span>OU</span><br>
-                        WAN<span>T</span><br>
-                    </h1>
-                    <img id = "firework_1" src = "{% static 'mainpage/assets/Firework.png' %}">
-                    <img id = "firework_2" src = "{% static 'mainpage/assets/Firework.png' %}">
-                </div>
-            </div>
-            <div id = "section" class = "container">
-                <div class = "row">
-                    <div class ="shortcut col-12 col-md-4" id = "shortcut_1">
-                        <div class = "position_box">
-                            <h3>
-                                DAY ONE?
-                            </h3>
-                            <a href = "#">
-                                동아리 소개 보러가기
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class ="shortcut col-12 col-md-4" id = "shortcut_2">
-                        <div class = "position_box">
-                            <a href = "#">
-                                동아리 방 예약 하러가기
-                            </a>
-                            <img src = "{% static 'mainpage/assets/room_img.png' %}">
-                        </div>
-                    </div>
-                </div>
-            </div>
+      {% block content %}
+      {% load static %}
+      <div id="main" class="container">
+        <div id="main_content">
+          <h1>
+            D<span>O</span><br />
+            A<span>NYTHING</span><br />
+            Y<span>OU</span><br />
+            WAN<span>T</span><br />
+          </h1>
+          <img
+            id="firework_1"
+            src="{% static 'mainpage/assets/Firework.png' %}"
+          />
+          <img
+            id="firework_2"
+            src="{% static 'mainpage/assets/Firework.png' %}"
+          />
         </div>
+      </div>
+      <div id="section" class="container">
+        <div class="row">
+          <div class="shortcut col-12 col-md-4" id="shortcut_1">
+            <div class="position_box">
+              <h3>DAY ONE?</h3>
+              <a href="#"> 동아리 소개 보러가기 </a>
+            </div>
+          </div>
 
-        <script src="{% static 'mainpage/index.js' %}"></script>
-    </body>
-</html>
+          <div class="shortcut col-12 col-md-4" id="shortcut_2">
+            <div class="position_box">
+              <a href="#"> 동아리 방 예약 하러가기 </a>
+              <img src="{% static 'mainpage/assets/room_img.png' %}" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {% endblock content %}
+
