@@ -12,7 +12,7 @@
 }
 
 a
-{
+{   
     text-decoration: none;
     color:black;
 }
@@ -50,11 +50,9 @@ ul
 
 #logo_image
 {
-    position: absolute;
-    left: 9px;
-    height: 5vh;
     object-fit: cover;
     transform:scale(1.4, 1.4);
+    height: 5vh;
 }
 
 #login
@@ -95,6 +93,12 @@ ul
 #nav_input
 {
     display: none;
+}
+
+.img_link
+{
+    position: absolute;
+    left: 9px;
 }
 
 /* main */

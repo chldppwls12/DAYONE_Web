@@ -18,10 +18,10 @@
     <div id="frame">
       <div id="header" class="container">
         <div id="header_content" class="row">
-          {% block back %}<img
+          {% block back %}<a class = "img_link" href = "{% url "mainpage:index" %}"><img
             id="logo_image"
             src="{% static 'mainpage/assets/logo.png' %}"
-          />{% endblock back %}
+          /></a>{% endblock back %}
 
           <a id="login">로그인</a>
           <div id="nav_icon">
@@ -39,7 +39,7 @@
         <div id="nav_content">
           <ul>
             <li><a id="to_login" href="#">로그인</a></li>
-            <li><a id="to_home" href="#">홈</a></li>
+            <li><a id="to_home" href = "{% url "mainpage:index" %}">홈</a></li>
             <li><a id="to_my" href="#">마이페이지</a></li>
           </ul>
         </div>
