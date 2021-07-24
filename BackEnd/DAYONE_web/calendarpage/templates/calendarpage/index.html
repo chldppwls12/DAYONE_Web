@@ -1,15 +1,43 @@
+{% extends 'base.html' %}
+{% block style %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DAY ONE</title>
-  <link rel="stylesheet" href="{% static 'calendarpage/style.css' %}">
-</head>
-<body>
-  <h1>캘린더 페이지입니다</h1>
-  <script src="{% static 'calendarpage/index.js' %}"></script>
-</body>
-</html>
+<link rel="stylesheet" href="{% static 'calendarpage/style.css' %} " />
+{% endblock style %}
+
+{% block content %}
+{% load static %}
+      <div id="cal" class="row">
+        <table class="col-10 col-sm-6 col-lg-5" id="calendar" align="center">
+          <tr align="center" id="cal-top">
+            <td class="not" colspan="7">
+              <div id="prev" class="button"><div id="prevButton"></div></div>
+              <span id="tbCalendarYM" class="font"> yyyy년 m월</span>
+              <div id="next" class="button"><div id="nextButton"></div></div>
+            </td>
+          </tr>
+          <tr align="center">
+            <td id="Sun" class="day">Sun</td>
+            <td class="day">Mon</td>
+            <td class="day">Tue</td>
+            <td class="day">Wed</td>
+            <td class="day">Thu</td>
+            <td class="day">Fri</td>
+            <td id="Sat" class="day">Sat</td>
+          </tr>
+        </table>
+      </div>
+      <div id="information">
+        <span>등록된 일정이 없습니다.</span>
+      </div>
+      <div id="booking" class="row">
+        <button id="bookingButton" class="col-6 col-sm-5 col-lg-4">
+          예약하기
+        </button>
+      </div>
+    </div>
+   
+{% endblock content %}
+{% block js %}
+{% load static %}
+<script src=" {% static 'calendarpage/index.js' %}"></script>
+{% endblock js %}
