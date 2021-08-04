@@ -6,28 +6,10 @@
 }
 
 body {
-  /*font-family: sans-serif;*/
   font-family: "PoetsenOne";
   margin: 0;
   padding: 0;
 }
-
-/*
-#header {
-  background-color: #ffffff;
-  height: 5vh;
-}
-
-#back {
-  width: 3vh;
-  height: 3vh;
-}
-
-#menu {
-  width: 3vh;
-  height: 3vh;
-}
-*/
 
 /*back_image*/
 #back_image {
@@ -42,6 +24,7 @@ body {
   border: 1px solid;
   border-color: #ff5353;
   background-color: #ff5353;
+  height: 7vh;
 }
 
 td:not(.not) {
@@ -50,6 +33,7 @@ td:not(.not) {
   border-color: #fc7373;
   text-align: center;
   width: 100/7%;
+  height: 7vh;
 }
 
 td:not(.not, .day) {
@@ -78,14 +62,14 @@ td:not(.not, .day) {
 #cal {
   background-color: #ffe9e2;
   width: 100%;
-  height: 55vh;
+  height: 64vh;
 }
 
 #calendar {
   table-layout: fixed;
   border-collapse: collapse;
-  height: 50vh;
-  margin-top: 2.5vh;
+  position: absolute;
+  top: 11vh;
 }
 
 .button {
@@ -167,20 +151,3 @@ td:not(.not, .day) {
   border-radius: 50%;
   opacity: 50%;
 }
-
-/*
-#circle {
-  position: absolute;
-  z-index: 0;
-  display: inline-block;
-  background-color: #faf58c;
-  width: 100%;
-  height: 100%;
-  border-radius: 40%;
-}
-
-font {
-  position: relative;
-  z-index: 2;
-}
-*/

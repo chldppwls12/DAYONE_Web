@@ -76,4 +76,3 @@ const prev = document.querySelector("#prev");
 const next = document.querySelector("#next");
 prev.addEventListener("click", event =>{prevCalendar();});
 next.addEventListener("click", event =>{nextCalendar();});
-

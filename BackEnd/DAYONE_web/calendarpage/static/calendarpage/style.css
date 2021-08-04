@@ -15,6 +15,7 @@ body {
   border: 1px solid;
   border-color: #ff5353;
   background-color: #ff5353;
+  height: 7vh;
 }
 
 td:not(.not) {
@@ -23,6 +24,7 @@ td:not(.not) {
   border-color: #fc7373;
   text-align: center;
   width: 100/7%;
+  height: 7vh;
 }
 
 td:not(.not, .day) {
@@ -51,14 +53,14 @@ td:not(.not, .day) {
 #cal {
   background-color: #ffe9e2;
   width: 100%;
-  height: 55vh;
+  height: 64vh;
 }
 
 #calendar {
   table-layout: fixed;
   border-collapse: collapse;
-  height: 50vh;
-  margin-top: 2.5vh;
+  position: absolute;
+  top: 11vh;
 }
 
 .button {
