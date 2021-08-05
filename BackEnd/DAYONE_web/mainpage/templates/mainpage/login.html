@@ -1,0 +1,19 @@
+{% extends 'main.html' %}
+
+{% block content %}
+    {% load static %}
+    <form action = "{% url 'mainpage:login' %}" method = "POST">
+        {% csrf_token %}
+        <div>
+            <label for = "id">ID</label>
+            <input type = "text" id = "id" name = "id" required>
+        </div>
+        <div>
+            <label for = "pw">PW</label>
+            <input type = "password" id = "pw" name = "pw" required>
+        </div>
+        <div>
+            <input type = "submit" value = "로그인">
+        </div>
+    </form>
+{% endblock content %}

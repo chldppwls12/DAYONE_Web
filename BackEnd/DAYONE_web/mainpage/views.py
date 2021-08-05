@@ -5,3 +5,9 @@ from django.shortcuts import render
 
 def index(req):
     return render(req, 'mainpage/index.html', {})
+
+def login_index(req):
+    return render(req, 'mainpage/login.html', {})
+
+def login(req):
+    return HttpResponse("ID : " + req.POST['id'] + "\nPW : " + req.POST['pw'])
