@@ -23,7 +23,7 @@
             src="{% static 'mainpage/assets/logo.png' %}"
           /></a>{% endblock back %}
 
-          <a id="login">로그인</a>
+          <a id="login" href = '{{to_go}}'>{{ is_auth }}</a>
           <div id="nav_icon">
             <div></div>
             <div></div>
@@ -38,9 +38,10 @@
         </div>
         <div id="nav_content">
           <ul>
-            <li><a id="to_login" href="#">로그인</a></li>
+            <li><a id="to_login" href="{{to_go}}">{{ is_auth }}</a></li>
             <li><a id="to_home" href = "{% url "mainpage:index" %}">홈</a></li>
-            <li><a id="to_my" href="#">마이페이지</a></li>
+            <li><a id="to_my" href="{{to_mypage}}">마이페이지</a></li>
+            <li><a id="to_join" href="{% url 'account:join_index' %}">회원가입</a></li>
           </ul>
         </div>
       </div>

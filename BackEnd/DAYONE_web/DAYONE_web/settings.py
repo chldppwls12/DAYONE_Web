@@ -56,6 +56,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'mainpage.apps.MainpageConfig',
     'calendarpage.apps.CalendarpageConfig',
+    'account.apps.AccountConfig',
 ]
 
 MIDDLEWARE = [

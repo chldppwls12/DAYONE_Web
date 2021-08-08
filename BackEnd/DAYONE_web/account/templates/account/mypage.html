@@ -1,0 +1,11 @@
+{% extends 'main.html' %}
+
+{% block content %}
+    {% load static %}
+    ID : {{id}} <br>
+    Email : {{email}} <br>
+    이름 : {{last_name}}{{first_name}}  <br>
+    전공 : {{major}} <br>
+    생일 : {{birth_day}} <br>
+    성별 : {{sex}}
+{% endblock content %}

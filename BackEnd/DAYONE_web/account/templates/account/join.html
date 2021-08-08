@@ -1,0 +1,50 @@
+{% extends 'main.html' %}
+
+{% block content %}
+    {% load static %}
+    <form action = "{% url 'account:join' %}" method = "POST">
+        {% csrf_token %}
+        <div>
+            <label for = "id">ID</label>
+            <input type = "text" name = "id" required>
+        </div>
+        <div>
+            <label for = "pw">PW</label>
+            <input type = "password" name = "pw" required>
+        </div>
+        <div>
+            <label for = "check_pw">check PW</label>
+            <input type = "password" name = "check_pw" required>
+        </div>
+        <div>
+            <label for = "email">이메일</label>
+            <input type = "text" name = "email" required>
+        </div>
+        <div>
+            <label for = "last_name">성</label>
+            <input type = "text" name = "last_name" required>
+        </div>
+        <div>
+            <label for = "first_name">이름</label>
+            <input type = "text" name = "first_name" required>
+        </div>
+        <div>
+            <label for = "major">전공</label>
+            <input type = "text" name = "major" maxlength = 30 required>
+        </div>
+        <div>
+            <label for = "birth_day">생일</label>
+            <input type = "date" name = "birth_day" value = '2000-01-01' required>
+        </div>
+        <div>
+            성별
+            <label for = "sex">남</label>
+            <input type = "radio" name = "sex" value = "M" checked>
+            <label for = "sex">녀</label>
+            <input type = "radio" name = "sex" value = "F">
+        </div>
+        <div>
+            <input type = "submit" value = "회원가입">
+        </div>
+    </form>
+{% endblock content %}

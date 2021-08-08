@@ -2,7 +2,7 @@
 
 {% block content %}
     {% load static %}
-    <form action = "{% url 'mainpage:login' %}" method = "POST">
+    <form action = "{% url 'account:login' %}" method = "POST">
         {% csrf_token %}
         <div>
             <label for = "id">ID</label>
