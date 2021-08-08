@@ -1,7 +1,10 @@
-from django.shortcuts import render
+from django.http.response import HttpResponseRedirect
+from django.shortcuts import render, redirect
 from .models import Reservation
 from django.contrib.auth import get_user_model
 import datetime
+from django.contrib import messages
+from django.urls import reverse
 
 # Create your views here.
 def index(request):
@@ -55,3 +58,9 @@ def new(request):
       for member in add_members_obj:
         reservation.member.add(members.get(id=member[0].id))
       return render(request, 'calendarpage/reservationCheck.html', {'reservation': reservation, 'time_category': time_category})
+
+def delete(request, id):
+  reservation = Reservation.objects.get(pk=id)
+  reservation.delete()
+  messages.info(request, '예약을 취소하였습니다.')
+  return redirect('calendarpage:index')

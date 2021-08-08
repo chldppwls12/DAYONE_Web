@@ -12,3 +12,14 @@
 {% for member in reservation.member.all %}
   {{member}}, 
 {% endfor %}
+
+<a href="{% url 'calendarpage:delete' reservation.id %}">
+  <button id="delete-btn">예약 취소</button>
+</a>
+
+<script>
+  deleteBtn = document.querySelector('#delete-btn');
+  deleteBtn.addEventListener('click', () => {
+    alert('예약을 취소하시겠습니까?');
+  })
+</script>
