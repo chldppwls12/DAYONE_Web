@@ -28,8 +28,10 @@
   <input type="submit"  value="예약">
 </form>
 
-{% if err_message %}
-  <script type='text/javascript'>
-    alert("{{err_message}}")
-  </script>
+{% if messages %}
+  {% for message in messages %}
+    <script>
+      alert('{{message}}')
+    </script>
+  {% endfor %}
 {% endif %}

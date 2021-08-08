@@ -1,7 +1,8 @@
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from .models import Reservation
 from django.contrib.auth import get_user_model
 import datetime
+from django.contrib import messages
 
 # Create your views here.
 def index(request):
@@ -34,8 +35,8 @@ def new(request):
       if not flag:
         break
     if not flag:
-      err_message = "예약 시간이 겹칩니다."
-      return render(request, 'calendarpage/reservation.html', {'err_message': err_message, 'members': members})
+      messages.info(request, "예약 시간이 겹칩니다.")
+      return redirect('calendarpage:new')
     else:
       reservation = Reservation()
       reservation.representative = current_user
