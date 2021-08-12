@@ -1,0 +1,318 @@
+/* pre-setting */
+
+@font-face {
+    font-family: PoetsenOne;
+    src: url(assets/PoetsenOne-Regular.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: MuktaMalar;
+    src: url(assets/MuktaMalar-Regular.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: MouseMemoris;
+    src: url(assets/MouseMemoris-Regular.ttf) format("truetype");
+}
+
+*
+{
+    margin: 0;
+    padding: 0;
+}
+
+a
+{
+    text-decoration: none;
+    color:black;
+}
+
+
+.container
+{
+    width: 100%;
+    height:667px;
+
+}
+
+.position_box
+{
+    position: absolute;
+}
+
+/* header */
+
+#header
+{
+    position: sticky;
+    top: 0;
+    height: 7vh;
+    background-color: white;
+    z-index: 8;
+}
+
+#header_content
+{
+    height: 7vh;
+}
+
+#back_button
+{ position:absolute;
+  margin-top:12px;
+  left:9px;
+  height: 7vh;
+}
+
+#nav_icon
+{
+    position:absolute;
+    right: 10px;
+    top:10px;
+}
+
+#nav_icon div
+{
+    width: 20px;
+    height: 0px;
+    background: #C4C4C4;
+    border: 2px solid #FF5353;
+    border-radius: 4px;
+    margin-bottom: 3px;
+}
+
+#nav_icon:last-child
+{
+    margin-bottom: 0;
+}
+
+
+/* main */
+
+#main
+{
+  height :14vh;
+  top:13vh;
+}
+
+
+#main_content
+{
+  position:absolute;
+  height: 14vh;
+  top:13vh;
+  left:25vw;
+  transform:scale(0.7);
+}
+
+
+
+/* login */
+
+#login
+{
+  top:33vh;
+  height: 25vh;
+}
+
+
+#id
+{   position: absolute;
+    left: 12vw;
+    top: 33vh;
+    width: 76vw;
+    height: 5vh;
+    line-height: 2.5vh;
+    border:2px solid #FF5353;
+    box-sizing: border-box;
+    border-radius: 6px;
+    padding-left:9px;
+    box-sizing: border-box;
+
+}
+
+::placeholder
+{
+  font-family:MuktaMalar;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 10px;
+  line-height: 17px;
+  color:#C4C4C4;
+}
+
+#pw
+{   position: absolute;
+    left: 12vw;
+    top: 40vh;
+    width: 76vw;
+    height: 5vh;
+    line-height: 2.5vh;
+    border:2px solid #FF5353;
+    box-sizing: border-box;
+    border-radius: 6px;
+    padding-left:9px;
+    background: #ffffff;
+    color: #C4C4C4;
+    box-sizing: border-box;
+
+}
+
+
+#login_button
+{
+  position: absolute;
+  left: 12vw;
+  top: 47vh;
+  width: 76vw;
+  height: 5.5vh;
+  text-align: center;
+  line-height: 4.2vh;
+  background-color: #ff5353;
+  color: #ffffff;
+  border: 2px solid #FF5353;
+  border-radius: 6px;
+  font-size: 17px;
+  font-weight: bold;
+  font-family: Mukta Malar;
+}
+
+#login_content
+{
+  position: absolute;
+  top: 54vh;
+  left:15vw;
+  font-family: MouseMemoirs;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 15px;
+  display: flex;
+  justify-content: space-evenly;
+
+}
+
+#login_content a
+{
+  color: #ff8282;
+}
+
+.border {
+  border-right: 2px solid #ff8282;
+  margin-left: 2vw;
+  padding-right:2vw;
+
+}
+
+.border1 {
+  margin-left: 2vw;
+  padding-right:2vw;
+
+}
+
+/*external*/
+
+#external
+{
+  top:58.3vh;
+  height:41.7vh;
+}
+
+#external_content
+{
+  position:absolute;
+  top:65.28vh;
+  height:34.72vh;
+}
+
+
+
+.line {
+  display:flex;
+  flex-basis:100%;
+  align-items:center;
+  color: #FFA2A2;
+  font-size: 13px;
+  line-height:33vh;
+  font-style:normal;
+  font-weight:normal;
+  font-family: MouseMemoirs;
+}
+
+.line::before{
+  content:"";
+  flex-grow:1;
+  margin:0px 16px;
+  background:#FFAFAF;
+  height:2px;
+  font-size:0px;
+  line-height:0px;
+}
+
+.line::after{
+  content:"";
+  flex-grow:1;
+  margin:0px 16px;
+  background:#FFAFAF;
+  height:2px;
+  font-size:0px;
+  line-height:0px;
+}
+
+
+
+
+
+#naver .position_box a
+{
+  position: absolute;
+  left: 12.27vw;
+  top: 1vh;
+  width: 75.5vw;
+  height: 5.6vh;
+  text-align: center;
+  line-height: 40px;
+  background-color: #85D951;
+  color: #ffffff;
+  font-family:MuktaMalar;
+  border: 2px solid #85D951;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 10px;
+}
+
+#kakao .position_box a
+{
+  position: absolute;
+  left: 12.27vw;
+  top: 9vh;
+  font-family:MuktaMalar;
+  width: 75.5vw;
+  height: 5.6vh;
+  text-align: center;
+  line-height: 40px;
+  background-color: #FFF500;
+  color: #855D38;
+  border: 2px solid #FFF500;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 10px;
+}
+
+#google .position_box a
+{
+  position: absolute;
+  left: 12.27vw;
+  top: 17vh;
+  bottom:12.71%;
+  width: 75.5vw;
+  height: 5.6vh;
+  text-align: center;
+  line-height: 40px;
+  background-color: #E1E1E1;
+  color: #ffffff;
+  border: 2px solid #E1E1E1;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 10px;
+  font-family:MuktaMalar;
+}
