@@ -40,7 +40,7 @@ td:not(.not, .day) {
   vertical-align: top;
   text-align: left;
 }
-
+/*
 #backButton {
   display: inline-block;
   background-color: #ffffff;
@@ -58,17 +58,22 @@ td:not(.not, .day) {
   text-align: right;
   float: right;
 }
-
+*/
 #cal {
+  /*background-color: #ffe9e2;*/
   background-color: #ffe9e2;
+  border-radius: 25px;
   width: 100%;
-  height: 64vh;
+  height: 54vh;
+  margin-top: -6vh;
+  margin-bottom: 15vh;
 }
-
+/*margin-top bottom과 height 합쳐서 64vh로!*/
 #calendar {
   table-layout: fixed;
   border-collapse: collapse;
   position: absolute;
+  box-shadow: 2px 3px 3px gray;
   top: 11vh;
 }
 
@@ -114,20 +119,64 @@ td:not(.not, .day) {
 #Sun {
   color: #ff5353;
 }
-
+/*
 #information {
-  background-color: #c4c4c4;
-  color: white;
-  height: 20vh;
+  padding: auto 1%;=>인식 못하는 듯?
+}*/
+#notice {
+  background-color: rgb(250, 220, 225);
+  border-radius: 16px;
+  margin: auto 1%;
+  /*color: white;*/
+  height: 30vh;
   text-align: center;
-  line-height: 20vh;
+  /*line-height: 20vh;*/
+  /*padding-top: 2vh;*/
+  /*margin-top=>줘도 변화x 이미 위에서 줘서 그런 듯..
+  margin은 중복 안되는 듯.. ?*/
+}
+
+.notice0 {
+  height: 4vh;
+  width: 4vh;
+  padding: 2vh 2vh 2vh 4vh;
+  float: left;
+}
+.noticeCircle {
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  background-color: #f9ece8;
+  box-shadow: -2px -2px 2px gray;
+}
+
+.notice1 {
+  height: 8vh;
+  /*width: 41vh;*/
+  width: 80%;
+  float: left;
+}
+
+.noticeReservation {
+  background-color: #f9ece8;
+  color: #ff5353;
+  height: 6vh;
+  border-radius: 15px;
+  /*
+  display: table-cell;
+  vertical-align: center;*/
+  line-height: 6vh;
+  text-align: center;
+  margin: 1vh;
+  box-shadow: -2px -2px 4px gray;
 }
 
 #booking {
-  background-color: #ffffff;
-  height: 40vh;
+  background-color: white;
+  height: 15vh;
+  padding-left: 70%;
 }
-
+/*
 #bookingButton {
   display: inline-block;
   background-color: #ff5353;
@@ -138,6 +187,20 @@ td:not(.not, .day) {
   font-size: 3vh;
   margin: 8vh auto;
   height: 8vh;
+}
+*/
+
+#bookingButton {
+  /*display: inline-block;*/
+  background-color: #ff5353;
+  border-color: #ff5353;
+  width: 10vh;
+  height: 10vh;
+  border-radius: 50%;
+  text-align: center;
+  color: white;
+  font-size: 4vh;
+  margin-top: 4vh;
 }
 
 #circle {
