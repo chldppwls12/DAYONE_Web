@@ -271,13 +271,20 @@ a
   height: 5.6vh;
   text-align: center;
   line-height: 40px;
-  background-color: #85D951;
+  background-color: #3BD707;
   color: #ffffff;
   font-family:MuktaMalar;
-  border: 2px solid #85D951;
+  border: 2px solid #3BD707;
   border-radius: 6px;
-  font-weight: bold;
+  font-weight: 800;
   font-size: 10px;
+  z-index: 1;
+}
+
+#naver_l ::after {
+  border-right: 1px solid white;
+  padding:10px;
+
 }
 
 #kakao .position_box a
@@ -290,12 +297,13 @@ a
   height: 5.6vh;
   text-align: center;
   line-height: 40px;
-  background-color: #FFF500;
+  background-color: #FFE11E;
   color: #855D38;
-  border: 2px solid #FFF500;
+  border: 2px solid #FFE11E;
   border-radius: 6px;
-  font-weight: bold;
+  font-weight: 800;
   font-size: 10px;
+  z-index: 1;
 }
 
 #google .position_box a
@@ -308,11 +316,23 @@ a
   height: 5.6vh;
   text-align: center;
   line-height: 40px;
-  background-color: #E1E1E1;
+  background-color: #BDBDBD;
   color: #ffffff;
-  border: 2px solid #E1E1E1;
+  border: 2px solid #BDBDBD;
   border-radius: 6px;
-  font-weight: bold;
+  font-weight: 800;
   font-size: 10px;
   font-family:MuktaMalar;
+  z-index: 1;
+}
+
+
+#border_right
+{
+position:absolute;
+border-left: 1px solid black;
+
+
+
+z-index:2;
 }
