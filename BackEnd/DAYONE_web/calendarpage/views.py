@@ -1,10 +1,12 @@
-from django.http.response import HttpResponseRedirect
+from django.http.response import HttpResponse
 from django.shortcuts import render, redirect
 from .models import Reservation
 from django.contrib.auth import get_user_model
 import datetime
 from django.contrib import messages
-from django.urls import reverse
+import json
+from django.views.decorators.csrf import csrf_exempt
+from django.core import serializers
 
 # Create your views here.
 def index(request):
@@ -64,3 +66,21 @@ def delete(request, id):
   reservation.delete()
   messages.info(request, '예약을 취소하였습니다.')
   return redirect('calendarpage:index')
+
+def show_list(request):
+  return render(request, 'calendarpage/ajaxprac.html')
+
+@csrf_exempt
+def ajax_prac(request):
+  jsonObj = json.loads(request.body)
+  year = jsonObj['year']
+  month = jsonObj['month']
+  day = jsonObj['day']
+  r_list =  Reservation.objects.filter(date__year=year, date__month=month, date__day=day)
+  for r in r_list:
+    r.representative_name = r.representative
+    r.save()
+  # print(r_list.values('representative_name'))
+  result = serializers.serialize('json', r_list)
+  print(result)
+  return HttpResponse(result, content_type='text/json')
