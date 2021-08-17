@@ -120,13 +120,11 @@ a
 #external_content
 {
   position:absolute;
-  top:52.4vh;
+  top:47.4vh;
   height:47.6vh;
 }
 
-
-
-#naver .position_box a
+#email .position_box a
 {
   position: absolute;
   left: 5.5vw;
@@ -135,10 +133,29 @@ a
   height: 5.6vh;
   text-align: center;
   line-height: 40px;
-  background-color: #85D951;
+  background-color: #FF5353;
   color: #ffffff;
   font-family:MuktaMalar;
-  border: 2px solid #85D951;
+  border: 2px solid #FF5353;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 10px;
+}
+
+
+#naver .position_box a
+{
+  position: absolute;
+  left: 5.5vw;
+  top: 12vh;
+  width: 86vw;
+  height: 5.6vh;
+  text-align: center;
+  line-height: 40px;
+  background-color: #3BD707;
+  color: #ffffff;
+  font-family:MuktaMalar;
+  border: 2px solid #3BD707;
   border-radius: 6px;
   font-weight: bold;
   font-size: 10px;
@@ -148,15 +165,15 @@ a
 {
   position: absolute;
   left: 5.5vw;
-  top: 12vh;
+  top: 23vh;
   font-family:MuktaMalar;
   width: 86vw;
   height: 5.6vh;
   text-align: center;
   line-height: 40px;
-  background-color: #FFF500;
+  background-color:#FFE11E;
   color: #855D38;
-  border: 2px solid #FFF500;
+  border: 2px solid #FFE11E;
   border-radius: 6px;
   font-weight: bold;
   font-size: 10px;
@@ -166,15 +183,15 @@ a
 {
   position: absolute;
   left: 5.5vw;
-  top: 23vh;
+  top: 34vh;
   bottom:12.71%;
   width: 86vw;
   height: 5.6vh;
   text-align: center;
   line-height: 40px;
-  background-color: #E1E1E1;
+  background-color:  #BDBDBD;
   color: #ffffff;
-  border: 2px solid #E1E1E1;
+  border: 2px solid  #BDBDBD;
   border-radius: 6px;
   font-weight: bold;
   font-size: 10px;
