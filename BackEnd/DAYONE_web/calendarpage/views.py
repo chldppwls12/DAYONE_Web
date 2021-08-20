@@ -5,8 +5,8 @@ from django.contrib.auth import get_user_model
 import datetime
 from django.contrib import messages
 import json
-from django.views.decorators.csrf import csrf_exempt
 from django.core import serializers
+from django.core.serializers.json import DjangoJSONEncoder
 
 # Create your views here.
 def index(request):
@@ -70,17 +70,34 @@ def delete(request, id):
 def show_list(request):
   return render(request, 'calendarpage/ajaxprac.html')
 
-@csrf_exempt
 def ajax_prac(request):
   jsonObj = json.loads(request.body)
   year = jsonObj['year']
   month = jsonObj['month']
   day = jsonObj['day']
   r_list =  Reservation.objects.filter(date__year=year, date__month=month, date__day=day)
+
+  name_queryset = r_list.values('id', 'representative__username')
+  member_queryset = r_list.values('id', 'member__username')
+
+  result = []
+
   for r in r_list:
-    r.representative_name = r.representative
-    r.save()
-  # print(r_list.values('representative_name'))
-  result = serializers.serialize('json', r_list)
-  print(result)
-  return HttpResponse(result, content_type='text/json')
+    representative__username = ''
+    member_arr = []
+    for u in name_queryset:
+      if r.id == u['id']:
+        representative__username = u['representative__username']
+
+    for m in member_queryset:
+      if r.id == m['id']:
+        member_arr.append(m['member__username'])
+
+    result.append({
+      'start_time': r.start_time,
+      'end_time': r.end_time,
+      'representative_name': representative__username,
+      'member_arr': member_arr
+    })
+
+  return HttpResponse(json.dumps(result, cls=DjangoJSONEncoder), content_type='text/json')

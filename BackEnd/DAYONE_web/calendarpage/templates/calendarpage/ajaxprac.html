@@ -9,9 +9,9 @@
 </head>
 <body>
   ajax prac입니다
-  <input type="text" class="year" >
-  <input type="text" class="month" >
-  <input type="text" class="day" >
+  <input type="text" class="year" value="2021">
+  <input type="text" class="month" value="8">
+  <input type="text" class="day" value="14">
   <input type="button" class="btnAjax" value="TEST">
   <div class="reservation-list"></div>
 </body>
@@ -29,8 +29,12 @@
     $.ajax({
       url: "{%url 'calendarpage:ajax' %}",
       type: 'POST',
+      headers: {
+        'X-CSRFTOKEN': '{{csrf_token}}'
+      },
       data: JSON.stringify(params),
       success: function(data){
+        console.log(data)
         let reservationList = document.querySelector('.reservation-list');
         if (data.length == 0){
           reservationList.innerHTML = '예약이 없습니다';
@@ -39,9 +43,11 @@
           reservationList.innerHTML = '';
           for (let i =0 ; i <data.length; i++){
             let span = document.createElement('span');
-            let fields = data[i]['fields'];
-            span.innerHTML = `${fields['representative_name']} / 
-                              ${fields['start_time']} / ${fields['end_time']} <br/>`;
+            span.innerHTML = `예약자: ${data[i]['representative_name']} / 
+                              시작 시간: ${data[i]['start_time']} /
+                              끝나는 시간: ${data[i]['end_time']} /
+                              멤버: ${data[i]['member_arr']}
+                              <br/>`;
             reservationList.appendChild(span);
           }
         }
