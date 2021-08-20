@@ -1,0 +1,35 @@
+<h2>예약창입니다.</h1>
+
+<form action="{% url 'calendarpage:new' %}" method="POST">
+  {% csrf_token %}
+  <div>
+    <label for="content">content</label>
+    <input type="text" name="content">
+  </div>
+  <div>
+    <label for="date">date</label>
+    <input type="text" name="date">
+  </div>
+  <div>
+    <label for="start_time">start_time</label>
+    <input type="text" name="start_time">
+  </div>
+  <div>
+    <label for="end_time">end_time</label>
+    <input type="text" name="end_time">
+  </div>
+  <div>
+    <label>members</label>
+    {% for member in members %}
+      <input type="checkbox" name="members" value="{{member}}">
+      <label for="members">{{member}}</label>
+    {% endfor %}
+  </div>
+  <input type="submit"  value="예약">
+</form>
+
+{% if err_message %}
+  <script type='text/javascript'>
+    alert("{{err_message}}")
+  </script>
+{% endif %}

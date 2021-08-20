@@ -1,0 +1,25 @@
+<h2>예약 확인 창입니다.</h2>
+
+예약자: {{reservation.representative}}
+<br>
+날짜: {{reservation.date}}
+<br>
+시간: {{time_category}} {{reservation.start_time}} ~ {{reservation.end_time}}
+<br>
+활동 내역: {{reservation.content}}
+<br>
+팀원: 
+{% for member in reservation.member.all %}
+  {{member}}, 
+{% endfor %}
+
+<a href="{% url 'calendarpage:delete' reservation.id %}">
+  <button id="delete-btn">예약 취소</button>
+</a>
+
+<script>
+  deleteBtn = document.querySelector('#delete-btn');
+  deleteBtn.addEventListener('click', () => {
+    alert('예약을 취소하시겠습니까?');
+  })
+</script>

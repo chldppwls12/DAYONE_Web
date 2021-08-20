@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+</head>
+<body>
+  ajax prac입니다
+  <input type="text" class="year" >
+  <input type="text" class="month" >
+  <input type="text" class="day" >
+  <input type="button" class="btnAjax" value="TEST">
+  <div class="reservation-list"></div>
+</body>
+<script>
+  let btnAjax = document.querySelector('.btnAjax');
+  btnAjax.addEventListener('click', e => {
+    let year = document.querySelector('.year').value;
+    let month = document.querySelector('.month').value;
+    let day = document.querySelector('.day').value;
+    let params = {
+      'year': year,
+      'month' : month,
+      'day': day
+    }
+    $.ajax({
+      url: "{%url 'calendarpage:ajax' %}",
+      type: 'POST',
+      data: JSON.stringify(params),
+      success: function(data){
+        let reservationList = document.querySelector('.reservation-list');
+        if (data.length == 0){
+          reservationList.innerHTML = '예약이 없습니다';
+        }
+        else{
+          reservationList.innerHTML = '';
+          for (let i =0 ; i <data.length; i++){
+            let span = document.createElement('span');
+            let fields = data[i]['fields'];
+            span.innerHTML = `${fields['representative_name']} / 
+                              ${fields['start_time']} / ${fields['end_time']} <br/>`;
+            reservationList.appendChild(span);
+          }
+        }
+      },
+      error: function(){
+        console.log('실패')
+      }
+    })
+  })
+</script>
+</html>
