@@ -1,9 +1,10 @@
 var today = new Date();
 var date = new Date();
-
+//*const dates=Array.from(document.querySelectorAll(".dates"));
 function prevCalendar() {
   today = new Date(today.getFullYear(), today.getMonth() - 1, today.getDate());
   buildCalendar();
+  //*dates.forEach(function(date){date.addEventListener("click",dateClick)})
 }
 
 function nextCalendar() {
@@ -78,6 +79,7 @@ var notice0=null;
 function removed(a){
   a.remove();console.log(a);}
 function dateClick(event){
+  console.log("hi");
   
   //var notice0=document.getElementsByClassName("notice0");
   //var remove=!!document.getElementsByClassName("notice0");
@@ -137,10 +139,10 @@ buildCalendar();
 const prev = document.querySelector("#prev");
 const next = document.querySelector("#next");
 const dates=Array.from(document.querySelectorAll(".dates"));
-prev.addEventListener("click", event =>{prevCalendar();});
+prev.addEventListener("click",prevCalendar);
 next.addEventListener("click", event =>{nextCalendar();});
-//dates.forEach(function(date){date.addEventListener("click",dateClick)})
-dates.forEach(function(date){date.addEventListener("click",dateClick,{capture:true})})
+dates.forEach(function(date){date.addEventListener("click",dateClick)})
+//dates.forEach(function(date){date.addEventListener("click",dateClick,{capture:true})})
 //dates.forEach(function(date){date.addEventListener("click",dateClick,{once:true})})
 //도 좋은 방식. 13일 눌렀다가 12일 눌렀다가 다시 13일 누르면 클릭안됨..!
 //누르면 제일 처음에 notice0이 있으면 그 태그를 지워주고 시작하면 이런 once click event 없어도 될 듯!
