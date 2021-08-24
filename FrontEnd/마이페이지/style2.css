@@ -47,7 +47,8 @@ a
 }
 
 #back_button
-{ position:absolute;
+{
+  position:absolute;
   margin-top:12px;
   left:9px;
   height: 7vh;
@@ -80,19 +81,19 @@ a
 
 #profile
 {
-  height :50vh;
-  top: 40vh;
+  height :30vh;
+  top: 18.5vh;
+
 }
 
 #profile_circle
 {
   position:absolute;
-  left: 24%;
-  right: 28.27%;
-  top:40vh;
+  left: 28vw;
+  top:18.5vh;
 
-  width:60vh;
-  height:60vh;
+  width:44vw;
+  height:24.6vh;
 
   border-radius:50%;
 
@@ -104,7 +105,7 @@ a
   position:absolute;
   max-width:100%;
   max-height:100%;
-  transform:scale(1.5);
+  transform:scale(1);
   width:auto; height:auto;
   margin:auto;
   top:0; bottom:0; left:0; right:0;
@@ -113,17 +114,17 @@ a
 #profile_amendment .position_box a
 {
   position:absolute;
-  top:100vh;
-  left: 32.25vw;
-  width:40vh;
-  height:7vh;
+  top:37vh;
+  left:32.3vw;
+  width:35.5vw;
+  height:3.8vh;
   border:2px solid #FF5353;
   box-sizing: border-box;
   border-radius: 6px;
   text-align: center;
   background: #ffffff;
   color: #FF5353;
-  line-height: calc(7vh*0.9)
+    line-height: 20px;
 }
 
 #profile_amendment .position_box h3
@@ -135,38 +136,80 @@ a
   font-style: normal;
   font-weight: normal;
   font-size: 43px;
-
   color: #FF5353;
 
 }
-
-
-
 
 /* section */
 
 #section
 {
-  top:calc(50vh*0.26);
+  top:54vh;
+  height:46vh;
 }
 
-#withdraw {
+#reserve_confirm .position_box a
+{
   position:absolute;
+  left:6.4vw;
+  top:18vh;
+  width:87.2vw;
+  height:7.5vh;
 
+  text-align: center;
+  line-height: 50px;
+  background-color: #ff5353;
+  color: #ffffff;
+  border: 0px solid #FF5353;
+  border-radius: 6px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 15px;
 }
+
+#locate_confirm  .position_box a
+{
+  position:absolute;
+  top:27vh;
+  left:6.4vw;
+  width:87.2vw;
+  height:7.5vh;
+  border:2px solid #FF5353;
+  box-sizing: border-box;
+  border-radius: 6px;
+  text-align: center;
+  background: #ffffff;
+  color: #FF5353;
+  line-height: 50px;
+  font-size: 15px;
+}
+
+#locate_confirm  .position_box h3
+{
+  position: absolute;
+  width: 192px;
+  height: 52px;
+  font-family: PoetsenOne;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 40px;
+  color: #FF5353;
+}
+
+
 
 #withdraw_content
 {
   position: absolute;
   width: 90vw;
-  top: 95vh;
+  top: 60vh;
   left:calc(20vw*0.2);
   height: 40vh;
   line-height: calc(70vh*0.2)
   font-family: PoetsenOne;
   font-style: normal;
   font-weight: normal;
-  font-size: 18px;
+  font-size: 16px;
   line-height: 21px;
 
   display: flex;
@@ -179,28 +222,7 @@ a
 }
 
 #border {
-  border-right: 2px solid #ff8282;
-  padding-right:1vw;
-  margin-right: 1vw;
-}
-
-
-#confirm .position_box a
-{
-  position: absolute;
-  left: 5vw;
-  top: calc(70vh );
-  width: 90vw;
-  height: calc(70vh * 0.2);
-
-  text-align: center;
-  line-height: calc(70vh * 0.2);
-  background-color: #ff5353;
-  color: #ffffff;
-  border: 0px solid #FF5353;
-  border-radius: 6px;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 17px;
-
+  border-right: 1px solid #ff8282;
+  padding-right:2vw;
+  margin-right: 2vw;
 }
