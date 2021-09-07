@@ -1,0 +1,215 @@
+/* pre-setting */
+
+@font-face {
+    font-family: PoetsenOne;
+    src: url(assets/PoetsenOne-Regular.ttf) format("truetype");
+}
+
+*
+{
+    margin: 0;
+    padding: 0;
+}
+
+a
+{
+    text-decoration: none;
+    color:black;
+}
+
+
+.container
+{
+    width: 100%;
+
+
+}
+
+.position_box
+{
+    position: absolute;
+}
+
+/* header */
+
+#header
+{
+    position: sticky;
+    top: 0;
+    height: 7vh;
+    background-color: white;
+    z-index: 8;
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
+}
+
+#header_content
+{
+    height: 7vh;
+}
+
+#back_button
+{
+  position:absolute;
+  margin-top:12px;
+  left:9px;
+  height: 7vh;
+
+}
+
+#nav_icon
+{
+    position:absolute;
+    right: 10px;
+    top:10px;
+}
+
+#nav_icon div
+{
+    width: 20px;
+    height: 0px;
+    background: #C4C4C4;
+    border: 2px solid #FF5353;
+    border-radius: 4px;
+    margin-bottom: 3px;
+}
+
+#nav_icon:last-child
+{
+    margin-bottom: 0;
+}
+
+/* section */
+#section
+{
+  position: absolute;
+  top:13.3vh;
+  height:8vh;
+  margin-left: 0;
+
+}
+
+#findID a
+{
+  position:absolute;
+  width:50vw;
+  height:8vh;
+
+  top:0vh;
+
+
+  text-align: center;
+  line-height: 50px;
+  background-color: #ff5353;
+  color: #ffffff;
+  border: 0px solid #FF5353;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 17px;
+}
+
+#findPW a
+{
+  position:absolute;
+  width:50vw;
+  height:8vh;
+  left:50vw;
+  top:0vh;
+
+  text-align: center;
+  line-height: 50px;
+  background-color: #ffffff;
+  color: #FF5353;
+  border: 2px solid #FF5353;
+  box-sizing: border-box;
+
+}
+
+#findPW
+{
+  position: absolute;
+  width: 99px;
+  height: 20px;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 17px;
+}
+
+
+/* title */
+#title
+{
+  position: absolute;
+  width: 21.51vw;
+  height: 9.06vh;
+  left: 2.83vw;
+  top: 27.67vh;
+}
+
+#box
+{
+  position: absolute;
+  width: 100vw;
+  height: 19.7vh;
+  left: 0px;
+  top: 36.6vh;
+
+  background: #FFE9E2;
+}
+
+/* button */
+
+#button
+{
+  position: absolute;
+  top:70.91vh;
+  height:20vh;
+}
+
+#go_PW  a
+{
+  position:absolute;
+  left:6.4vw;
+  top:0vh;
+  width:87.2vw;
+  height:7.5vh;
+
+
+  text-align: center;
+  line-height: 50px;
+  background-color: #ffffff;
+  color: #FF5353;
+  border: 2px solid #FF5353;
+  box-sizing: border-box;
+  border-radius: 6px;
+  font-weight: 800;
+
+}
+
+#go_PW
+{
+  position: absolute;
+  width: 99px;
+  height: 20px;
+  font-style: normal;
+  font-size: 17px;
+}
+
+
+#go_login  a
+{
+  position:absolute;
+  left:6.4vw;
+  top:9vh;
+  width:87.2vw;
+  height:7.5vh;
+
+  text-align: center;
+  line-height: 50px;
+  background-color: #ff5353;
+  color: #ffffff;
+  border: 0px solid #FF5353;
+  border-radius: 6px;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 17px;
+}
