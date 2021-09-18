@@ -4,7 +4,9 @@ var date = new Date();
 function prevCalendar() {
   today = new Date(today.getFullYear(), today.getMonth() - 1, today.getDate());
   buildCalendar();
-  //*dates.forEach(function(date){date.addEventListener("click",dateClick)})
+  //var dates=Array.from(document.querySelectorAll(".dates"));
+  //dates.forEach(function(date){console.log("dateClicked!")})
+  //dates.forEach(function(date){date.addEventListener("click",dateClick)})
 }
 
 function nextCalendar() {
@@ -70,7 +72,9 @@ function buildCalendar() {
   else{
     tbCalendar.deleteRow(-1);
   }//tr이 주차만큼 생성
- 
+  var dates=Array.from(document.querySelectorAll(".dates"));
+  dates.forEach(function(date){date.addEventListener("click",dateClick)});
+
   
 }
 
@@ -78,6 +82,7 @@ var notice=document.querySelector("#notice");
 var notice0=null;
 function removed(a){
   a.remove();console.log(a);}
+
 function dateClick(event){
   console.log("hi");
   
@@ -138,10 +143,14 @@ function dateClick(event){
 buildCalendar();
 const prev = document.querySelector("#prev");
 const next = document.querySelector("#next");
-const dates=Array.from(document.querySelectorAll(".dates"));
 prev.addEventListener("click",prevCalendar);
 next.addEventListener("click", event =>{nextCalendar();});
-dates.forEach(function(date){date.addEventListener("click",dateClick)})
+//var dates=Array.from(document.querySelectorAll(".dates"));
+//dates.forEach(function(date){date.addEventListener("click",dateClick)});
+//이 두 줄이 원래 밖에 있었는데, 밖에 있던 줄을 buildCalendar();안에 넣으니까 해결!왤까??
+//buildCalendar가 일어난 다음에 실행되어야 하는 함수라 이렇게 해야 되는 듯!
+
+//dates.forEach(function(date){date.addEventListener("click",event=>{console.log("dateClicked!")})});
 //dates.forEach(function(date){date.addEventListener("click",dateClick,{capture:true})})
 //dates.forEach(function(date){date.addEventListener("click",dateClick,{once:true})})
 //도 좋은 방식. 13일 눌렀다가 12일 눌렀다가 다시 13일 누르면 클릭안됨..!

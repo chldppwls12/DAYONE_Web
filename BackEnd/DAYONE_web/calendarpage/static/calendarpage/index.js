@@ -1,15 +1,23 @@
+
+//console.log("hello",year,month,day)
 var today = new Date();
 var date = new Date();
-
-function prevCalendar() {
+let dateSends;
+let prevCalendar=function prevCalendar() {
+  //console.log(today.getMonth());
   today = new Date(today.getFullYear(), today.getMonth() - 1, today.getDate());
+  //console.log(today.getMonth());
   buildCalendar();
+  dates.forEach(date=>date.addEventListener("click",dateSend));
 }
 
 function nextCalendar() {
   today = new Date(today.getFullYear(), today.getMonth() + 1, today.getDate());
   buildCalendar();
+  dates.forEach(date=>date.addEventListener("click",dateSend));
 }
+
+var dates=null;
 function buildCalendar() {
   var firstDate = new Date(today.getFullYear(), today.getMonth(), 1);
   var lastDate = new Date(today.getFullYear(), today.getMonth() + 1, 0);
@@ -27,12 +35,13 @@ function buildCalendar() {
   for (var i = 0; i < firstDate.getDay(); i++) {
     var cell = row.insertCell();
     cnt = cnt + 1;
-  }//이번달 1일 전까지 공란 만들기
+  }
 
   for (i = 1; i <= lastDate.getDate(); i++) {
     cell = row.insertCell();
     cell.innerHTML = i;
     cell.setAttribute("id",`${i}`);
+    cell.setAttribute("class","dates");
     cnt = cnt + 1;
     if (cnt % 7 == 1) {
       cell.innerHTML = "<font color=#ff5353>" + i;
@@ -49,8 +58,6 @@ function buildCalendar() {
       today.getMonth() == date.getMonth() &&
       i == date.getDate()
     ) {
-      //cell.style.backgroundColor = "#FAF58C";
-      
       const circle=document.createElement('div');
       cell.appendChild(circle);
       circle.setAttribute("id","circle");
@@ -67,12 +74,73 @@ function buildCalendar() {
   }
   else{
     tbCalendar.deleteRow(-1);
-  }//tr이 주차만큼 생성
- 
-  
+  }
+  //selectDates(dates,dateClick);
+  dates=Array.from(document.querySelectorAll(".dates"));
+  dates.forEach(function(date){date.addEventListener("click",dateClick)});
+  //dates.forEach(date=>date.addEventListener("click",dateSend));//: index에도 있음.
 }
+//var selectDates=function(a,b){
+  //var a=Array.from(document.querySelectorAll(".dates"));
+  //a.forEach(function(date){date.addEventListener("click",b)});
+//}
+
+//console.log(dates)
+//setTimeout(() => {
+  //console.log(dates)
+//}, 2000);
+
+var notice=document.querySelector("#notice");
+var notice0=null;
+function removed(a){
+  a.remove();console.log(a);}
+
+var hihi=function(a){console.log("hihi",a);}
+
+var dateClick= function (event){
+  console.log("hi");
+
+  if(notice0!=null){
+    var removes0=Array.from(document.querySelectorAll(".notice0"));
+    var removes1=Array.from(document.querySelectorAll(".noticeCircle"));
+    var removes2=Array.from(document.querySelectorAll(".notice1"));
+    var removes3=Array.from(document.querySelectorAll(".noticeReservation"));
+    removes0.forEach(function(a){a.remove();console.log(a);});
+    removes1.forEach(removed);
+    removes2.forEach((remove)=>{remove.remove();console.log(remove);});
+    removes3.forEach((remove)=>{remove.remove();console.log(remove);});
+  }
+   
+  /*var ids=this;
+  var idsID=ids.getAttribute("id")
+  console.log(idsID);*/
+  //createNotice();
+  //noticeReservation.innerText=idsID+"일에 등록된 일정이 없습니다."
+}
+var noticeCircle;
+var notice1;
+var noticeReservation;
+
+var createNotice = function(){
+  notice0=document.createElement("div");
+  noticeCircle=document.createElement("div");
+  notice1=document.createElement("div");
+  noticeReservation=document.createElement("div");
+  notice0.setAttribute("class","notice0");
+  noticeCircle.setAttribute("class","noticeCircle");
+  notice1.setAttribute("class","notice1");
+  noticeReservation.setAttribute("class","noticeReservation");
+  //noticeReservation.innerText=idsID+"일에 등록된 일정이 없습니다."
+  notice0.appendChild(noticeCircle);
+  notice1.appendChild(noticeReservation);
+  notice.appendChild(notice0);
+  notice.appendChild(notice1);
+
+}
+
+
 buildCalendar();
 const prev = document.querySelector("#prev");
 const next = document.querySelector("#next");
-prev.addEventListener("click", event =>{prevCalendar();});
+prev.addEventListener("click",prevCalendar);
 next.addEventListener("click", event =>{nextCalendar();});

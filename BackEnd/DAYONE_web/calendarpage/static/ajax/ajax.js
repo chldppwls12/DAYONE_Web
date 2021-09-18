@@ -1,24 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-  </head>
-  <body>
-    ajax prac입니다
-    <input type="text" class="year" value="2021" />
-    <input type="text" class="month" value="8" />
-    <input type="text" class="day" value="14" />
-    <input type="button" class="btnAjax" value="TEST" />
-    <div class="reservation-list"></div>
-  </body>
-  <!--<script src="calendarpage/index.js"></script>-->
-  <script>
-    //window.addEventListener('load', function(){});
-    let btnAjax = document.querySelector(".btnAjax");
+//window.addEventListener('load', function(){});
+let btnAjax = document.querySelector(".btnAjax");
     btnAjax.addEventListener("click", (e) => {
       let year = document.querySelector(".year").value;
       let month = document.querySelector(".month").value;
@@ -28,7 +9,6 @@
         month: month,
         day: day,
       };
-      console.log(year, month, day, "wow");
       $.ajax({
         url: "{%url 'calendarpage:ajax' %}",
         type: "POST",
@@ -45,7 +25,7 @@
             reservationList.innerHTML = "";
             for (let i = 0; i < data.length; i++) {
               let span = document.createElement("span");
-              span.innerHTML = `예약자: ${data[i]["representative_name"]} /
+              span.innerHTML = `예약자: ${data[i]["representative_name"]} / 
                               시작 시간: ${data[i]["start_time"]} /
                               끝나는 시간: ${data[i]["end_time"]} /
                               멤버: ${data[i]["member_arr"]}
@@ -59,5 +39,3 @@
         },
       });
     });
-  </script>
-</html>

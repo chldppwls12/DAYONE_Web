@@ -2,8 +2,8 @@
 {% block style %}
 {% load static %}
 <link rel="stylesheet" href="{% static 'calendarpage/style.css' %} " />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 {% endblock style %}
-
 {% block content %}
 {% load static %}
       <div id="cal" class="row">
@@ -27,13 +27,10 @@
         </table>
       </div>
       <div id="information">
-        <span>등록된 일정이 없습니다.</span>
+        <div id="notice"></div>
       </div>
-      
       <div id="booking" class="row">
-        <button id="bookingButton" class="col-6 col-sm-5 col-lg-4" onclick="location.href = `{% url  'calendarpage:new' %}`">
-          예약하기
-        </button>
+        <button id="bookingButton" class="col-6 col-sm-5 col-lg-4">예약</button>
       </div>
     </div>
 
@@ -49,4 +46,67 @@
 {% block js %}
 {% load static %}
 <script src=" {% static 'calendarpage/index.js' %}"></script>
+
+<script>
+let year;
+let month;
+let day;
+console.log("wow", today.getMonth()+1,dates,"its");
+hihi("byebye");
+//setTimeout(()=>{console.log(dates)},5000);
+year = today.getFullYear();
+month = today.getMonth()+1;
+var dateSelects=function(event){
+  //var h=this;
+  console.log("hhhhhhhhhhhhhh");
+}
+//dates.forEach(function(date){date.addEventListener("click",dateSelects)})
+function dateSend(event){
+  console.log("Date Send");
+  console.log(this);
+  day=this.getAttribute("id");
+  console.log(typeof(day))
+  console.log(year,month,day,"wow");
+  let params={
+  year: String(year),
+  month: String(month),
+  day:day,
+};
+fetch("{%url 'calendarpage:ajax' %}",{
+  method:"POST",
+  headers: {
+          "X-CSRFTOKEN": "{{csrf_token}}",
+        },
+  body: JSON.stringify(params)})
+  .then(res=>res.json())
+  .then(data => {
+          console.log("it's",data);
+          //let notice = document.querySelector("#notice");
+          if (data.length == 0) {
+            createNotice();
+            noticeReservation.innerText=`${day}일에 등록된 일정이 없습니다.`
+          } else {
+            //reservationList.innerHTML = "";
+            for (let i = 0; i < data.length; i++) {
+              console.log(`예약자: ${data[i]["representative_name"]}/
+                              시간: ${data[i]["start_time"]} ~
+                              ${data[i]["end_time"]}
+                              <br/>`);
+              createNotice();
+              noticeReservation.innerText = `${data[i]["representative_name"]} / ${data[i]["start_time"]} ~ ${data[i]["end_time"]}`;
+              //reservationList.appendChild(span);
+            }
+          }
+      
+  })
+  .catch(error=>{console.log(error)})
+}
+
+
+dates.forEach(date=>date.addEventListener("click",dateSend))
+
+console.log(year, month, day, "yeay");
+
+</script>
+
 {% endblock js %}
