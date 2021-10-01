@@ -149,6 +149,22 @@ td:not(.not, .day) {
   box-shadow: -2px -2px 4px gray;
 }
 
+#noticeName {
+  display: inline-block;
+  height: 10px;
+  width: 50px;
+  background-color: red;
+  float: right;
+}
+
+#noticeTime {
+  display: inline-block;
+  background-color: red;
+  height: 10px;
+  width: 30px;
+  float: left;
+}
+
 #booking {
   background-color: white;
   height: 15vh;

@@ -3,19 +3,7 @@
 var today = new Date();
 var date = new Date();
 let dateSends;
-let prevCalendar=function prevCalendar() {
-  //console.log(today.getMonth());
-  today = new Date(today.getFullYear(), today.getMonth() - 1, today.getDate());
-  //console.log(today.getMonth());
-  buildCalendar();
-  dates.forEach(date=>date.addEventListener("click",dateSend));
-}
 
-function nextCalendar() {
-  today = new Date(today.getFullYear(), today.getMonth() + 1, today.getDate());
-  buildCalendar();
-  dates.forEach(date=>date.addEventListener("click",dateSend));
-}
 
 var dates=null;
 function buildCalendar() {
@@ -49,7 +37,6 @@ function buildCalendar() {
     }
     if (cnt % 7 == 0) {
       row = calendar.insertRow();
-      
     }
 
 
@@ -120,6 +107,8 @@ var dateClick= function (event){
 var noticeCircle;
 var notice1;
 var noticeReservation;
+var noticeTime;
+var noticeName;
 
 var createNotice = function(){
   notice0=document.createElement("div");
@@ -140,7 +129,3 @@ var createNotice = function(){
 
 
 buildCalendar();
-const prev = document.querySelector("#prev");
-const next = document.querySelector("#next");
-prev.addEventListener("click",prevCalendar);
-next.addEventListener("click", event =>{nextCalendar();});
